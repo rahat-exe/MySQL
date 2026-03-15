@@ -1,37 +1,54 @@
-USE practice_database;
+-- Creates a new database
+CREATE DATABASE learning;
 
-SHOW TABLES;
+-- Use That database
+USE learning;
 
-SHOW DATABASES;
+-- Delete that database
+DROP DATABASE learning;
 
+-- Changes database properties
+ALTER DATABASE learning
+CHARACTER SET utf8mb4;
 
-SELECT  * FROM student;
-
-DROP  TABLE students;
-
-
-Create a table
-
-CREATE TABLE student (
+-- Create Table
+CREATE TABLE students (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(50),
-  age INT
-);
+  name VARCHAR(255) NOT NULL,
+  age INT NOT NULL
+)
 
-INSERT INTO student (name, age) VALUES ('Raja', 24);
+-- Delete table completely
+DROP TABLE students;
 
-SELECT (name) FROM student;
+-- -- Alter Table
 
-SELECT COUNT(*) FROM student;
+-- Add a new column
+ALTER TABLE students
+ADD email VARCHAR(255) NOT NULL UNIQUE;
 
-USE db;
+-- Remove column
+ALTER TABLE students
+DROP COLUMN email;
 
-CREATE TABLE hello (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50),
-    age INT
-);
+-- Modify column
+ALTER TABLE students
+MODIFY COLUMN age INT NOT NULL DEFAULT 0;
 
-DROP TABLE hello;
+-- Rename table
+ALTER TABLE students
+RENAME TO users;
 
-SHOW TABLES;
+ALTER TABLE users
+RENAME TO students;
+
+-- Rename column
+ALTER TABLE users
+RENAME COLUMN name TO first_name;
+
+SELECT * FROM users;
+
+---- TRUNCATE TABLE -- Removes all rows but keeps the table structure.
+TRUNCATE TABLE users;
+
+DESC Students;
