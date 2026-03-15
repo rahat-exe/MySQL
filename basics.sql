@@ -4,6 +4,9 @@ CREATE DATABASE learning;
 -- Use That database
 USE learning;
 
+SHOW DATABASES;
+SHOW TABLES;
+
 -- Delete that database
 DROP DATABASE learning;
 
@@ -21,6 +24,7 @@ CREATE TABLE students (
 -- Delete table completely
 DROP TABLE students;
 
+
 -- -- Alter Table
 
 -- Add a new column
@@ -35,6 +39,10 @@ DROP COLUMN email;
 ALTER TABLE students
 MODIFY COLUMN age INT NOT NULL DEFAULT 0;
 
+-- Rename column
+ALTER TABLE users
+RENAME COLUMN name TO first_name;
+
 -- Rename table
 ALTER TABLE students
 RENAME TO users;
@@ -42,13 +50,10 @@ RENAME TO users;
 ALTER TABLE users
 RENAME TO students;
 
--- Rename column
-ALTER TABLE users
-RENAME COLUMN name TO first_name;
 
-SELECT * FROM users;
+SELECT * FROM students;
 
 ---- TRUNCATE TABLE -- Removes all rows but keeps the table structure.
-TRUNCATE TABLE users;
+TRUNCATE TABLE students;
 
 DESC Students;
