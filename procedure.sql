@@ -29,3 +29,12 @@ select x * x;
 end //
 
 CALL select_with_params(5) //
+
+
+CREATE PROCEDURE select_with_id(in id int)
+begin
+SELECT * from students where id = id;
+END
+
+call select_with_id(8)
+
