@@ -1,5 +1,7 @@
 USE learning;
 
+SELECT * from users;
+
 
 -- Aggregation functions -- Aggregation functions take many rows → return one calculated value.
 
